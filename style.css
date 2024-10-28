@@ -432,9 +432,6 @@ button.rounded {
     margin-top: 8px;
 }
 
-
-
-
 /* Agents section */
 #agents {
     margin: 64px 0 96px; /* Vertical margins to space the section from others */
@@ -498,4 +495,44 @@ p.large-paragraph {
 
 #the-best ul li {
     margin: 10px 0; /* Adds vertical margin to list items for spacing between them */
+}
+
+#services {
+    background: #f8f9fa; 
+    padding: 96px 0; /* Vertical padding */
+    margin: 128px 0; /* Margin to create space above and below the section */
+    border-bottom: 1px solid #dee2e6; /* Bottom border for visual separation */
+}
+
+#services h2 {
+    text-align: center;
+    margin-bottom: 48px; 
+}
+
+#services .flex {
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line if needed */
+}
+
+#services .flex > div {
+    width: 30%; /* Each service card takes up 30% of the container width */
+    margin-bottom: 32px; 
+}
+
+#services .flex > div .fas {
+    color: #f69314;
+    font-size: 40px; 
+    float: left; 
+    margin-top: 15px;
+    width: 20%; /* Width of the icon container */
+    text-align: center;
+}
+
+#services .flex > div .services-card-right {
+    float: right; /* Align service card content to the right */
+    width: 75%; /* Width of the right content area */
+}
+
+#services .flex > div a {
+    color: #f69314;
+    text-decoration: none; /* Remove underline from links */
 }
