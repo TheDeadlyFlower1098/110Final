@@ -1,0 +1,144 @@
+/* SVG inside the small logo */
+.logo-small svg {
+    fill: white; /* Set the fill color of the SVG to white */
+    display: inline-block; /* Make the SVG behave like an inline block element */
+}
+
+/* Remove default margin and padding for the body */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    background-color: black; 
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Space between child elements */
+    align-items: center; /* Align items vertically in the center */
+    padding: 10px 20px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+/* Container for header elements */
+.header-wrap {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+/* Small logo */
+.logo-small {
+    display: block; /* Make the logo a block element */
+    width: 35px;
+    height: 56px;
+    margin-right: 3px;
+}
+
+/* Title section */
+.item-title {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start of the flex container */
+}
+
+/* Container for button links */
+.buttons-wrap {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+/* First link in item-title */
+.item-title a:first-child {
+    color: grey;
+    text-decoration: none; /* Remove underline from link */
+    margin-right: 10px;
+}
+
+/* Follow button */
+.follow-button {
+    display: flex; 
+    align-items: center; /* Align items vertically in the center */
+    background-color: lightgreen;
+    border-radius: 2px;
+    border: none;
+    padding: 0;
+    height: 15px;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-size: 0; /* Hide text size to allow SVG to display */
+}
+
+/* SVG inside the follow button */
+.follow-button svg {
+    width: 12px;
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 2px; /* Space to the right of the SVG */
+}
+
+/* Text inside the follow button */
+.follow-button span {
+    font-size: 12px;
+    line-height: 3px; /* Adjust line height */
+    margin: 0; 
+    color: black;
+}
+
+/* Main title */
+.item-title h1 {
+    margin: 0; 
+    margin-top: 5px; 
+    font-size: 24px;
+}
+
+/* Container for right-side buttons */
+.right-buttons {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    flex-wrap: nowrap; /* Prevent wrapping of buttons */
+}
+
+/* Links in the right-buttons section */
+.right-buttons a {
+    background-color: grey;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    text-decoration: none; /* Remove underline from links */
+    display: flex; 
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center content */
+    padding: 10px 15px; 
+    margin-left: 5px;
+}
+
+/* Love button */
+.love-button {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    background-color: transparent; /* Transparent background */
+    border: none;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    padding: 5px;
+}
+
+/* SVG inside the love button */
+.love-button svg {
+    width: 10px;
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px;
+}
+
+/* Text inside the love button */
+.love-button span {
+    font-size: 14px; 
+    color: black;
+    margin: 0;
+}
+
+/* Sign-up button */
+.signup-button {
+    background-color: lightgreen;
+}
