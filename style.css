@@ -3,7 +3,7 @@ body {
     font-family: "Roboto", "Helvetica", "Sans-serif";
     margin: 0;
     padding: 0;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 400;
     color: #777;
     line-height: 1.7;
@@ -274,7 +274,7 @@ nav .nav-button a:hover {
 }
 
 #how-it-works { 
-    padding: 3rem 0;
+    padding: 48px 0;
     background: #f8f9fa;
     text-align: center;
 }
@@ -286,9 +286,9 @@ nav .nav-button a:hover {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size:40px;
     color: #f69314;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
 }
 
 .flex {
@@ -300,11 +300,6 @@ h2 {
     color: #f69314;
     font-size: 35px;
 }
-
-
-
-
-
 
 /* Properties section styling*/
 #properties {
@@ -435,4 +430,55 @@ button.rounded {
     font-size: 12.8px; 
     font-style: normal; /* Normal font style */
     margin-top: 8px;
+}
+
+
+
+
+/* Agents section */
+#agents {
+    margin: 64px 0 96px; /* Vertical margins to space the section from others */
+    padding: 0 0 96px; /* Bottom padding for internal spacing */
+    border-bottom: 1px solid #ccc; /* Bottom border to visually separate the section */
+}
+
+/* Large paragraph text */
+p.large-paragraph {
+    font-size: 20px;
+    font-weight: 300; /* Light font weight */
+}
+
+/* Specific styling for large paragraphs within the agents section */
+#agents p.large-paragraph {
+    width: 50%;
+    margin-bottom: 64px; /* Bottom margin for spacing below the paragraph */
+}
+
+/* Flexbox settings for layout within the agents section */
+#agents .flex {
+    flex-wrap: wrap; /* Allows flex items to wrap onto multiple lines */
+    padding: 0;
+}
+
+/* Individual agent cards */
+#agents .card {
+    width: 32%; /* Each card takes up 32% of the container width */
+    background: #f0f0f0; 
+    margin-bottom: 32px; /* Bottom margin to separate cards from each other */
+}
+
+/* Image styling for the agent cards */
+#agents .card img {
+    width: 100%;
+}
+
+/* Padding for headings and paragraphs within agent cards */
+#agents .card h3, #agents .card p {
+    padding-left: 16px; 
+}
+
+/* Specific styling for card headings */
+#agents .card h3 {
+    font-family: "Playfair Display", serif; 
+    color: #000;
 }
