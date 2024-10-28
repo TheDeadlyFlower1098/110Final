@@ -1,16 +1,17 @@
-/* SVG inside the small logo */
-.logo-small svg {
-    fill: white; /* Set the fill color of the SVG to white */
-    display: inline-block; /* Make the SVG behave like an inline block element */
-}
-
 /* Remove default margin and padding for the body */
 body {
     margin: 0;
     padding: 0;
 }
 
+/* SVG inside the small logo */
+.logo-small svg {
+    fill: white; /* Set the fill color of the SVG to white */
+    display: inline-block; /* Make the SVG behave like an inline block element */
+}
+
 .main-header {
+    position: fixed;
     background-color: black; 
     color: white;
     display: flex;
@@ -58,11 +59,36 @@ body {
     margin-right: 10px;
 }
 
+/* Remove background from buttons and style them as links */
+.right-buttons a {
+    background-color: grey;
+    border-radius: 5px;
+    color: white; /* Change text color to match links */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; 
+    cursor: pointer; /* Change cursor to pointer */
+    display: inline-flex; /* Keep items aligned */
+    align-items: center; /* Center items vertically */
+    margin-left: 5px;
+}
+
+/* Navigation buttons*/
+.nav-button {
+    background-color: transparent;
+    border: none; 
+    color: white; /* Change text color to match links */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px;
+    cursor: pointer; /* Change cursor to pointer */
+    display: inline-flex; /* Keep items aligned */
+    align-items: center; /* Center items vertically */
+}
+
 /* Follow button */
 .follow-button {
     display: flex; 
     align-items: center; /* Align items vertically in the center */
-    background-color: lightgreen;
+    background-color: lightgreen; /* Keep for visibility */
     border-radius: 2px;
     border: none;
     padding: 0;
@@ -100,20 +126,6 @@ body {
     flex-wrap: nowrap; /* Prevent wrapping of buttons */
 }
 
-/* Links in the right-buttons section */
-.right-buttons a {
-    background-color: grey;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    text-decoration: none; /* Remove underline from links */
-    display: flex; 
-    align-items: center; /* Align items vertically in the center */
-    justify-content: center; /* Center content */
-    padding: 10px 15px; 
-    margin-left: 5px;
-}
-
 /* Love button */
 .love-button {
     display: flex;
@@ -141,4 +153,117 @@ body {
 /* Sign-up button */
 .signup-button {
     background-color: lightgreen;
+    border-radius: 5px;
+}
+
+/* Container for the second header section */
+#header-hero-container {
+    position: relative; /* Allow absolute positioning for children */
+    
+}
+
+/* Set background for the hero section */
+#header-hero-container {
+    background-color: rgba(52, 58, 64, 0.9);
+}
+
+/* Hero section styling */
+#hero {
+    background-color: rgba(52, 58, 64, 0.9); 
+    height: 100vh; /* Full viewport height for hero section */
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+/* Div for the logo */
+#header-hero-container > header > div {
+    margin-left: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+}
+
+/* Logo link styling */
+#logo {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: bold; /* Bold text for the logo */
+    text-decoration: none;
+}
+
+/* Navigation menu styling */
+nav {
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    align-items: center; /* Center links vertically */
+    height: 100%; /* Ensure nav takes full height */
+}
+
+/* Navigation links */
+nav ul {
+    display: flex; /* Display links in a row */
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Remove bullet points */
+}
+
+/* Individual navigation link styles */
+nav ul li {
+    margin-right: 10px;
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+/* Link styling */
+nav .nav-button a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    font-size: 16px;
+    padding: 10px 0; /* Add vertical padding for click area */
+}
+
+/* Hover effect for links */
+nav .nav-button a:hover {
+    font-weight: bold; /* Bold text on hover */
+}
+
+/* Separator line below the header */
+.separator {
+    height: 1px; 
+    background-color: white;
+    margin-top: 10px;
+}
+
+/* Hero section styling */
+#hero {
+    background-color: rgba(52, 58, 64, 0.9);
+    height: 100vh; /* Full viewport height for hero section */
+    display: flex; 
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    position: relative;
+}
+
+/* Hero text styling */
+.hero-text {
+    position: absolute; /* Position absolute to center it */
+    top: 50%; /* Align to the middle of the section */
+    left: 50%; /* Align to the left edge */
+    transform: translate(-50%, -50%); /* Center it horizontally and vertically */
+    z-index: 2; /* Stack above other elements */
+    color: #fff;
+    width: 500px; /* Fixed width for text container */
+    text-align: center; /* Center text alignment */
+}
+
+/* Hero heading */
+#hero h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Hero paragraph */
+#hero p {
+    font-size: 18px;
+    margin: 10px 0 0;
 }
