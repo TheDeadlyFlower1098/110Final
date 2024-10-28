@@ -482,3 +482,20 @@ p.large-paragraph {
     font-family: "Playfair Display", serif; 
     color: #000;
 }
+
+#the-best ul {
+    padding-left: 20px;
+    margin-bottom: 64px; /* Adds bottom margin*/
+}
+
+.flex > img {
+    width: 47%; /* Sets the width of images inside a flex container to 47% of the parent element */
+}
+
+#the-best .flex > div {
+    width: 40%;  /* Sets the width of direct child divs inside a flex container with the ID 'the-best' to 40% of the parent element's width */
+}
+
+#the-best ul li {
+    margin: 10px 0; /* Adds vertical margin to list items for spacing between them */
+}
