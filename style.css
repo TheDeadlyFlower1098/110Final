@@ -1,7 +1,12 @@
 /* Remove default margin and padding for the body */
 body {
+    font-family: "Roboto", "Helvetica", "Sans-serif";
     margin: 0;
     padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #777;
+    line-height: 1.7;
 }
 
 /* SVG inside the small logo */
@@ -266,4 +271,168 @@ nav .nav-button a:hover {
 #hero p {
     font-size: 18px;
     margin: 10px 0 0;
+}
+
+#how-it-works { 
+    padding: 3rem 0;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #f69314;
+    margin-bottom: 1rem;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    color: #f69314;
+    font-size: 35px;
+}
+
+
+
+
+
+
+/* Properties section styling*/
+#properties {
+    margin: 64px 0 128px; /* Top margin of 64, bottom margin of 128 */
+    position: relative;
+}
+
+/* General container settings */
+.container {
+    max-width: 1140px; /* Maximum width of the container */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 20px; /* Padding on the left and right */
+}
+
+/* Properties section heading */
+#properties h2 {
+    margin-bottom: 48px;
+}
+
+/* Basic styling for the slick slider */
+.slick-slider {
+    position: relative; /* Allows positioning of child elements within the slider */
+    display: block;
+    box-sizing: border-box; /* Ensures padding and borders are included in width calculations */
+    user-select: none; /* Disables text selection */
+    touch-action: pan-y; /* Restricts touch action to vertical scrolling */
+}
+
+/* List of slick slides */
+.slick-list {
+    position: relative; 
+    display: block; 
+    overflow: hidden;
+}
+
+/* Individual slide styling */
+#properties-slider .slick-slide {
+    display: block; 
+    padding: 0 15px; /* Adds padding on the left and right */
+}
+
+/* General slide styling */
+.slick-slide {
+    display: none; /* Initially hides all slides */
+    float: left; /* Floats slides to the left for horizontal alignment */
+    height: 100%; /* Full height of the container */
+}
+
+/* Styling for images inside the properties slider */
+#properties-slider img {
+    width: 100%;
+    display: block;
+}
+
+/* Styling for slider navigation arrows (previous/next) */
+#properties-slider a.slick-arrow {
+    color: #000;
+    position: absolute;
+    top: -78px; /* Places the arrows above the slider */
+    right: 0; /* Aligns the arrow to the right */
+    text-transform: uppercase; /* Makes the arrow text uppercase */
+    letter-spacing: 0.1px; /* Adds space between letters */
+    text-decoration: none;
+}
+
+/* Adjust position for the previous arrow */
+#properties-slider a.slick-prev {
+    right: 80px; /* Moves the previous arrow 80px to the left */
+}
+
+/* Styling for rounded buttons */
+button.rounded {
+    background: #f69314; 
+    border: none; 
+    color: #fff; 
+    font-size: 16px;
+    border-radius: 30px;
+    padding: 10px 30px;
+    line-height: 1.5;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Additional styling for rounded buttons within the properties section */
+#properties button.rounded {
+    display: block; 
+    margin: 32px auto 0; /* Center the button and adds margin above */
+    width: 350px;
+}
+
+/* Property details section */
+#properties-slider .property-details {
+    padding: 16px; /* Adds padding inside the details container */
+}
+
+/* Price information in property details */
+#properties-slider .price {
+    font-size: 19.2px;
+    color: #343a40;
+    font-weight: 800; /* Bold font weight */
+    margin-bottom: 0.8px; /* Space below the price */
+}
+
+/* Spans inside the property details */
+#properties-slider .property-details span {
+    font-size: 12.8px; 
+    padding-right: 15px;
+}
+
+/* Adds a border between beds and baths information */
+#properties-slider .property-details span.beds,
+#properties-slider .property-details span.baths {
+    border-right: 1px solid #888;
+}
+
+/* Adds padding for the baths information */
+#properties-slider .property-details span.baths {
+    padding-left: 10px; 
+}
+
+/* Padding adjustments for the square footage information */
+#properties-slider .property-details span.sqft {
+    padding-left: 10px; 
+    padding-right: 0;
+}
+
+/* Address text in property details */
+#properties-slider .property-details address {
+    font-size: 12.8px; 
+    font-style: normal; /* Normal font style */
+    margin-top: 8px;
 }
