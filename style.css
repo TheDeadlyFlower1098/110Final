@@ -1,538 +1,1124 @@
-/* Remove default margin and padding for the body */
+/* Import Google Fonts for typography */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap');
+
+
+
+/* start: global styles */
 body {
-    font-family: "Roboto", "Helvetica", "Sans-serif";
+    font-family: "Roboto", "Helvetica", "Sans-serif"; /* Set the default font family */
     margin: 0;
-    padding: 0;
-    font-size: 16px;
+    padding: 0; 
+    font-size: 1rem; 
     font-weight: 400;
-    color: #777;
-    line-height: 1.7;
+    color: #777; /* Set default text color */
+    line-height: 1.7; 
 }
 
-/* SVG inside the small logo */
-.logo-small svg {
-    fill: white; /* Set the fill color of the SVG to white */
-    display: inline-block; /* Make the SVG behave like an inline block element */
+/* Remove outline from all elements for a cleaner look */
+* {
+    outline: none;
 }
 
-.main-header {
-    position: fixed;
-    background-color: black; 
-    color: white;
-    display: flex;
-    justify-content: space-between; /* Space between child elements */
-    align-items: center; /* Align items vertically in the center */
-    padding: 10px 20px;
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    box-sizing: border-box; /* Include padding in element's total width/height */
+/* Apply a transition effect to all elements except specific classes */
+*:not(.slick-track):not(.slick-list) {
+    transition: 0.4s; /* Smooth transition for state changes */
 }
 
-/* Container for header elements */
-.header-wrap {
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
-}
-
-/* Small logo */
-.logo-small {
-    display: block; /* Make the logo a block element */
-    width: 35px;
-    height: 56px;
-    margin-right: 3px;
-}
-
-/* Title section */
-.item-title {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align items to the start of the flex container */
-}
-
-/* Container for button links */
-.buttons-wrap {
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
-}
-
-/* First link in item-title */
-.item-title a:first-child {
-    color: grey;
-    text-decoration: none; /* Remove underline from link */
-    margin-right: 10px;
-}
-
-/* Remove background from buttons and style them as links */
-.right-buttons a {
-    background-color: grey;
-    border-radius: 5px;
-    color: white; /* Change text color to match links */
-    text-decoration: none; /* Remove underline */
-    padding: 10px 15px; 
-    cursor: pointer; /* Change cursor to pointer */
-    display: inline-flex; /* Keep items aligned */
-    align-items: center; /* Center items vertically */
-    margin-left: 5px;
-}
-
-/* Navigation buttons*/
-.nav-button {
-    background-color: transparent;
-    border: none; 
-    color: white; /* Change text color to match links */
-    text-decoration: none; /* Remove underline */
-    padding: 10px 15px;
-    cursor: pointer; /* Change cursor to pointer */
-    display: inline-flex; /* Keep items aligned */
-    align-items: center; /* Center items vertically */
-}
-
-/* Follow button */
-.follow-button {
-    display: flex; 
-    align-items: center; /* Align items vertically in the center */
-    background-color: lightgreen; /* Keep for visibility */
-    border-radius: 2px;
-    border: none;
-    padding: 0;
-    height: 15px;
-    cursor: pointer; /* Change cursor to pointer on hover */
-    font-size: 0; /* Hide text size to allow SVG to display */
-}
-
-/* SVG inside the follow button */
-.follow-button svg {
-    width: 12px;
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 2px; /* Space to the right of the SVG */
-}
-
-/* Text inside the follow button */
-.follow-button span {
-    font-size: 12px;
-    line-height: 3px; /* Adjust line height */
-    margin: 0; 
-    color: black;
-}
-
-/* Main title */
-.item-title h1 {
-    margin: 0; 
-    margin-top: 5px; 
-    font-size: 24px;
-}
-
-/* Container for right-side buttons */
-.right-buttons {
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
-    flex-wrap: nowrap; /* Prevent wrapping of buttons */
-}
-
-/* Love button */
-.love-button {
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
-    background-color: transparent; /* Transparent background */
-    border: none;
-    cursor: pointer; /* Change cursor to pointer on hover */
-    padding: 5px;
-}
-
-/* SVG inside the love button */
-.love-button svg {
-    width: 10px;
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 5px;
-}
-
-/* Text inside the love button */
-.love-button span {
-    font-size: 14px; 
-    color: black;
-    margin: 0;
-}
-
-/* Sign-up button */
-.signup-button {
-    background-color: lightgreen;
-    border-radius: 5px;
-}
-
-/* Container for the second header section */
-#header-hero-container {
-    position: relative; /* Allow absolute positioning for children */
-    
-}
-
-/* Set background for the hero section */
-#header-hero-container {
-    background-color: rgba(52, 58, 64, 0.9);
-}
-
-/* Hero section styling */
-#hero {
-    background-color: rgba(52, 58, 64, 0.9); 
-    height: 100vh; /* Full viewport height for hero section */
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-}
-
-/* Div for the logo */
-#header-hero-container > header > div {
-    margin-left: 200px;
-    margin-top: 10px;
-    margin-bottom: 10px; 
-}
-
-/* Logo link styling */
-#logo {
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    font-weight: bold; /* Bold text for the logo */
-    text-decoration: none;
-}
-
-/* Navigation menu styling */
-nav {
-    display: flex;
-    justify-content: flex-end; /* Align links to the right */
-    align-items: center; /* Center links vertically */
-    height: 100%; /* Ensure nav takes full height */
-}
-
-/* Navigation links */
-nav ul {
-    display: flex; /* Display links in a row */
-    padding: 0;
-    margin: 0;
-    list-style-type: none; /* Remove bullet points */
-}
-
-/* Individual navigation link styles */
-nav ul li {
-    margin-right: 10px;
-    display: flex;
-    align-items: center; /* Center items vertically */
-}
-
-/* Link styling */
-nav .nav-button a {
-    color: white;
-    text-decoration: none; /* Remove underline */
-    font-size: 16px;
-    padding: 10px 0; /* Add vertical padding for click area */
-}
-
-/* Hover effect for links */
-nav .nav-button a:hover {
-    font-weight: bold; /* Bold text on hover */
-}
-
-/* Separator line below the header */
-.separator {
-    height: 1px; 
-    background-color: white;
-    margin-top: 10px;
-}
-
-/* Hero section styling */
-#hero {
-    background-color: rgba(52, 58, 64, 0.9);
-    height: 100vh; /* Full viewport height for hero section */
-    display: flex; 
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    position: relative;
-}
-
-/* Hero text styling */
-.hero-text {
-    position: absolute; /* Position absolute to center it */
-    top: 50%; /* Align to the middle of the section */
-    left: 50%; /* Align to the left edge */
-    transform: translate(-50%, -50%); /* Center it horizontally and vertically */
-    z-index: 2; /* Stack above other elements */
-    color: #fff;
-    width: 500px; /* Fixed width for text container */
-    text-align: center; /* Center text alignment */
-}
-
-/* Hero heading */
-#hero h1 {
-    font-size: 36px;
-    margin: 0;
-}
-
-/* Hero paragraph */
-#hero p {
-    font-size: 18px;
-    margin: 10px 0 0;
-}
-
-#how-it-works { 
-    padding: 48px 0;
-    background: #f8f9fa;
-    text-align: center;
-}
-
+/* Container styles for layout */
 .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1140px; 
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+/* Flexbox styles for layout */
+.flex {
+    display: flex; 
+    justify-content: space-between; /* Distribute space between flex items */
+}
+
+/* Reset margin and padding for heading elements */
+h1, h2, h3, h4, h5 {
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Specific styles for heading levels */
+h1, h2 {
+    font-family: "Playfair Display", serif; /* Set font family for main headings */
+    font-weight: 800; /* Set bold font weight for main headings */
+}
+
+h1 {
+    font-size: 3rem; 
+    line-height: 1.2; 
+    margin-bottom: 1rem; /* Add bottom margin */
 }
 
 h2 {
-    font-size:40px;
-    color: #f69314;
-    margin-bottom: 16px;
+    font-size: 2.5rem; 
+    color: #f69314; 
+    margin-bottom: 1rem; /* Add bottom margin */
+    line-height: 1.2; 
 }
 
-.flex {
-    display: flex;
-    justify-content: space-between;
+h3 {
+    font-size: 1.4rem; 
+    font-weight: 300; /* Set light font weight for h3 */
 }
 
-.icon {
-    color: #f69314;
-    font-size: 35px;
+h4 {
+    font-size: 1.2rem; 
+    font-weight: 300; /* Set light font weight for h4 */
 }
 
-/* Properties section styling*/
+h5 {
+    font-size: 1rem; 
+    font-family: "Playfair Display", serif; /* Set font family for h5 */
+}
+
+/* Paragraph styles */
+p {
+    margin: 0 0 1rem; /* Set bottom margin for paragraphs */
+}
+
+/* Styles for rounded buttons */
+button.rounded {
+    background: #f69314; 
+    border: none; /* Remove default border */
+    color: #fff; 
+    font-size: 16px; 
+    border-radius: 30px; /* Add rounded corners to buttons */
+    padding: 10px 30px; 
+    line-height: 1.5; 
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styles for large paragraphs */
+p.large-paragraph {
+    font-size: 1.25rem; /* Increase font size for large paragraphs */
+    font-weight: 300; /* Set light font weight for large paragraphs */
+}
+
+
+
+/* start: header styles */
+/* Container for the header hero section */
+#header-hero-container {
+    min-height: 600px; 
+    height: calc(100vh); /* Set height to full viewport height */
+    position: relative; 
+}
+
+/* Styles for the header */
+header {
+    background: transparent; 
+    padding: 1rem 0; /* Add vertical padding to the header */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Add a subtle bottom border */
+    position: fixed; /* Fix header to the top of the viewport */
+    width: 100%; 
+    z-index: 3; /* Ensure the header appears above other elements */
+}
+
+/* Styles for the logo */
+#logo {
+    font-family: "Roboto", "Helvetica", "Sans-serif"; /* Set font family for logo */
+    font-size: 1.7rem; 
+    font-weight: 800; /* Set bold font weight for the logo */
+    color: #fff; 
+    text-decoration: none; /* Remove underline from the logo link */
+    position: relative;
+    top: 4px; /* Adjust vertical position */
+}
+
+/* Styles for the hamburger menu (for mobile view) */
+.hamburger-menu {
+    background-color: transparent; 
+    border: 1px solid #fff; 
+    padding: 3px 5px; /* Add padding for touch target */
+    width: 30px; 
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-top: 10px; 
+    display: none; /* Hide hamburger menu by default */
+}
+
+/* Styles for each strip in the hamburger menu */
+.hamburger-menu .strip {
+    display: block; 
+    height: 1px; 
+    background-color: #fff;
+    margin: 4px 0; /* Add vertical spacing between strips */
+}
+
+/* Styles for the unordered list in the header */
+header ul {
+    list-style-type: none; /* Remove default bullet points */
+}
+
+/* Styles for list items in the header */
+header ul li {
+    display: inline-block; 
+    margin: 0 15px; /* Add horizontal spacing between items */
+}
+
+/* Hidden element for closing the flyout menu */
+#close-flyout {
+    display: none; /* Hide the close button initially */
+}
+
+/* Styles for links in the header */
+header ul li a {
+    color: #999; 
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Change link color when header is sticky */
+header ul.is-sticky li a {
+    color: #000; 
+}
+
+/* Change link color to white on hover or when active */
+header ul li a:hover,
+header ul li a.active {
+    color: #fff; 
+}
+
+/* Change link color to orange on hover or when active in sticky state */
+header ul.is-sticky li a:hover,
+header ul.is-sticky li a.active {
+    color: #f69314; 
+}
+
+
+
+/* start: hero section styles */
+/* Styles for the hero section */
+#hero {
+    /* Set background image, centered and not repeating */
+    background: url('https://onclickwebdesign.com/wp-content/uploads/hero_1.jpg') center center no-repeat; 
+    background-size: cover;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 1; /* Place hero behind other elements with higher z-index */
+    height: 100%; 
+    width: 100%;
+}
+
+/* Overlay for the hero section */
+#hero .fade {
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    background: rgba(52, 58, 64, 0.9); /* Dark overlay with transparency */
+    z-index: 1; /* Place overlay above the hero background */
+}
+
+/* Styles for the hero text container */
+#hero .hero-text {
+    position: absolute;
+    top: 50%; /* Center vertically within the hero section */
+    margin: -75px auto 0; /* Adjust margin to center text */
+    left: 0;
+    right: 0; 
+    z-index: 2; /* Place text above the overlay */
+    color: #fff; 
+    width: 500px; 
+    text-align: center; /* Center text within the container */
+}
+
+/* Styles for paragraphs within the hero text */
+#hero .hero-text p {
+    line-height: 1.5em; 
+    font-weight: 300; /* Set light font weight for paragraphs */
+    font-size: 1rem; 
+}
+
+
+
+/* start: how it works styles */
+/* Styles for the "How It Works" section */
+#how-it-works {
+    padding: 3rem 0; /* Add vertical padding */
+    background: #f8f9fa;
+    text-align: center; /* Center-align text within the section */
+}
+
+/* Styles for the heading in the "How It Works" section */
+#how-it-works h2 {
+    margin-bottom: 3rem; 
+}
+
+/* Styles for flex items in the "How It Works" section */
+#how-it-works .flex > div {
+    width: 30%; 
+}
+
+/* Styles for subheadings in the "How It Works" section */
+#how-it-works h4 {
+    color: #343a40; 
+    margin-top: 1rem; 
+}
+
+/* Styles for icons in the "How It Works" section */
+#how-it-works span.fas {
+    color: #f69314; 
+    font-size: 35px; 
+}
+
+
+
+
+/* start: properties styles */
+/* Styles for the properties section */
 #properties {
-    margin: 64px 0 128px; /* Top margin of 64, bottom margin of 128 */
+    margin: 4rem 0 8rem; /* Add vertical margins above and below */
     position: relative;
 }
 
-/* General container settings */
-.container {
-    max-width: 1140px; /* Maximum width of the container */
-    margin: 0 auto; /* Centers the container */
-    padding: 0 20px; /* Padding on the left and right */
-}
-
-/* Properties section heading */
+/* Styles for the main heading in the properties section */
 #properties h2 {
-    margin-bottom: 48px;
+    margin-bottom: 3rem; 
 }
 
-/* Basic styling for the slick slider */
-.slick-slider {
-    position: relative; /* Allows positioning of child elements within the slider */
-    display: block;
-    box-sizing: border-box; /* Ensures padding and borders are included in width calculations */
-    user-select: none; /* Disables text selection */
-    touch-action: pan-y; /* Restricts touch action to vertical scrolling */
+/* Styles for the container within the properties section */
+#properties .container {
+    position: relative; /* Set position to relative for positioning pseudo-elements */
 }
 
-/* List of slick slides */
-.slick-list {
-    position: relative; 
-    display: block; 
-    overflow: hidden;
+/* Pseudo-element for decorative content before the container */
+#properties .container:before {
+    content: "/"; /* Add a forward slash as content */
+    position: absolute; 
+    right: 80px; 
+    top: 18px; 
+    color: #999; 
 }
 
-/* Individual slide styling */
-#properties-slider .slick-slide {
-    display: block; 
-    padding: 0 15px; /* Adds padding on the left and right */
-}
-
-/* General slide styling */
-.slick-slide {
-    display: none; /* Initially hides all slides */
-    float: left; /* Floats slides to the left for horizontal alignment */
-    height: 100%; /* Full height of the container */
-}
-
-/* Styling for images inside the properties slider */
-#properties-slider img {
-    width: 100%;
-    display: block;
-}
-
-/* Styling for slider navigation arrows (previous/next) */
+/* Styles for the slick slider arrows */
 #properties-slider a.slick-arrow {
-    color: #000;
-    position: absolute;
-    top: -78px; /* Places the arrows above the slider */
-    right: 0; /* Aligns the arrow to the right */
-    text-transform: uppercase; /* Makes the arrow text uppercase */
-    letter-spacing: 0.1px; /* Adds space between letters */
-    text-decoration: none;
+    color: #000; 
+    position: absolute; 
+    top: -78px; /* Position above the slider */
+    right: 0; /* Align to the right */
+    text-transform: uppercase; /* Transform text to uppercase */
+    letter-spacing: 0.1rem; /* Add spacing between letters */
+    text-decoration: none; /* Remove underline from arrow links */
 }
 
-/* Adjust position for the previous arrow */
+/* Positioning for the previous arrow */
 #properties-slider a.slick-prev {
-    right: 80px; /* Moves the previous arrow 80px to the left */
+    right: 80px; 
 }
 
-/* Styling for rounded buttons */
-button.rounded {
-    background: #f69314; 
-    border: none; 
-    color: #fff; 
-    font-size: 16px;
-    border-radius: 30px;
-    padding: 10px 30px;
-    line-height: 1.5;
-    cursor: pointer; /* Changes cursor to pointer on hover */
+/* Styles for each slide in the properties slider */
+#properties-slider .slick-slide {
+    padding: 0 15px; /* Add horizontal padding around each slide */
 }
 
-/* Additional styling for rounded buttons within the properties section */
-#properties button.rounded {
+/* Styles for images in the properties slider */
+#properties-slider img {
+    width: 100%; 
     display: block; 
-    margin: 32px auto 0; /* Center the button and adds margin above */
-    width: 350px;
 }
 
-/* Property details section */
+/* Styles for property details section */
 #properties-slider .property-details {
-    padding: 16px; /* Adds padding inside the details container */
+    padding: 1rem; 
 }
 
-/* Price information in property details */
+/* Styles for the property price */
 #properties-slider .price {
-    font-size: 19.2px;
-    color: #343a40;
-    font-weight: 800; /* Bold font weight */
-    margin-bottom: 0.8px; /* Space below the price */
+    font-size: 1.2rem; 
+    color: #343a40; 
+    font-weight: 800; /* Set bold font weight for emphasis */
+    margin: 0 0 0.5rem 0; /* Add bottom margin */
 }
 
-/* Spans inside the property details */
+/* Styles for spans within property details */
 #properties-slider .property-details span {
-    font-size: 12.8px; 
+    font-size: 0.8rem; 
     padding-right: 15px;
 }
 
-/* Adds a border between beds and baths information */
+/* Additional padding for baths span */
+#properties-slider .property-details span.baths {
+    padding-left: 10px; 
+}
+
+/* Additional padding for sqft span */
+#properties-slider .property-details span.sqft {
+    padding-right: 0; 
+    padding-left: 10px;
+}
+
+/* Border styles for beds and baths spans */
 #properties-slider .property-details span.beds,
 #properties-slider .property-details span.baths {
-    border-right: 1px solid #888;
+    border-right: 1px solid #888; 
 }
 
-/* Adds padding for the baths information */
-#properties-slider .property-details span.baths {
-    padding-left: 10px; 
-}
-
-/* Padding adjustments for the square footage information */
-#properties-slider .property-details span.sqft {
-    padding-left: 10px; 
-    padding-right: 0;
-}
-
-/* Address text in property details */
+/* Styles for address element in property details */
 #properties-slider .property-details address {
-    font-size: 12.8px; 
-    font-style: normal; /* Normal font style */
-    margin-top: 8px;
+    font-size: 0.8rem; 
+    font-style: normal; /* Set normal font style */
+    margin-top: 0.5rem; 
 }
 
-/* Agents section */
+/* Styles for rounded buttons in the properties section */
+#properties button.rounded {
+    display: block; 
+    margin: 2rem auto 0; /* Center the button horizontally with top margin */
+    width: 350px; 
+}
+
+
+
+/* start: agents styles */
+/* Styles for the agents section */
 #agents {
-    margin: 64px 0 96px; /* Vertical margins to space the section from others */
-    padding: 0 0 96px; /* Bottom padding for internal spacing */
-    border-bottom: 1px solid #ccc; /* Bottom border to visually separate the section */
+    margin: 4rem 0 6rem; /* Add vertical margins */
+    padding: 0 0 6rem; /* Add bottom padding */
+    border-bottom: 1px solid #ccc; 
 }
 
-/* Large paragraph text */
-p.large-paragraph {
-    font-size: 20px;
-    font-weight: 300; /* Light font weight */
-}
-
-/* Specific styling for large paragraphs within the agents section */
+/* Styles for large paragraph in the agents section */
 #agents p.large-paragraph {
-    width: 50%;
-    margin-bottom: 64px; /* Bottom margin for spacing below the paragraph */
+    width: 50%; 
+    margin-bottom: 4rem; /* Add bottom margin */
 }
 
-/* Flexbox settings for layout within the agents section */
+/* Flex container styles for agents */
 #agents .flex {
-    flex-wrap: wrap; /* Allows flex items to wrap onto multiple lines */
-    padding: 0;
+    flex-wrap: wrap; /* Allow flex items to wrap onto multiple lines */
+    padding: 0; 
 }
 
-/* Individual agent cards */
+/* Styles for individual agent cards */
 #agents .card {
-    width: 32%; /* Each card takes up 32% of the container width */
+    width: 32%; 
     background: #f0f0f0; 
-    margin-bottom: 32px; /* Bottom margin to separate cards from each other */
+    margin-bottom: 2rem; /* Add bottom margin */
 }
 
-/* Image styling for the agent cards */
+/* Styles for images within agent cards */
 #agents .card img {
-    width: 100%;
+    width: 100%; 
+}
+
+/* Styles for headings within agent cards */
+#agents .card h3 {
+    font-family: "Playfair Display", serif; /* Set font family for headings */
+    color: #000; 
 }
 
 /* Padding for headings and paragraphs within agent cards */
-#agents .card h3, #agents .card p {
-    padding-left: 16px; 
+#agents .card h3,
+#agents .card p {
+    padding-left: 1rem; /* Add left padding */
 }
 
-/* Specific styling for card headings */
-#agents .card h3 {
-    font-family: "Playfair Display", serif; 
-    color: #000;
+
+
+/* start: best real estate company styles */
+/* Styles for the "Best Real Estate Company" section */
+#the-best {
+    margin: 2rem 0; /* Add vertical margins */
 }
 
-#the-best ul {
-    padding-left: 20px;
-    margin-bottom: 64px; /* Adds bottom margin*/
+/* Styles for images within the flex container of the "Best Real Estate Company" section */
+#the-best .flex > img {
+    width: 47%; 
 }
 
-.flex > img {
-    width: 47%; /* Sets the width of images inside a flex container to 47% of the parent element */
-}
-
+/* Styles for divs within the flex container of the "Best Real Estate Company" section */
 #the-best .flex > div {
-    width: 40%;  /* Sets the width of direct child divs inside a flex container with the ID 'the-best' to 40% of the parent element's width */
+    width: 40%; 
 }
 
+/* Styles for unordered lists in the "Best Real Estate Company" section */
+#the-best ul {
+    padding-left: 20px; /* Add left padding to lists*/
+    margin-bottom: 4rem; /* Add bottom margin */
+}
+
+/* Styles for list items in the unordered list */
 #the-best ul li {
-    margin: 10px 0; /* Adds vertical margin to list items for spacing between them */
+    margin: 10px 0; /* Add vertical margins between list items */
 }
 
+
+
+/* start: services styles */
+/* Styles for the services section */
 #services {
     background: #f8f9fa; 
-    padding: 96px 0; /* Vertical padding */
-    margin: 128px 0; /* Margin to create space above and below the section */
-    border-bottom: 1px solid #dee2e6; /* Bottom border for visual separation */
+    padding: 6rem 0; /* Add vertical padding */
+    margin: 8rem 0; /* Add vertical margins */
+    border-bottom: 1px solid #dee2e6; /* Add bottom border */
 }
 
+/* Styles for the heading in the services section */
 #services h2 {
-    text-align: center;
-    margin-bottom: 48px; 
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 3rem; /* Add bottom margin */
 }
 
+/* Styles for the flex container in the services section */
 #services .flex {
-    flex-wrap: wrap; /* Allow flex items to wrap to the next line if needed */
+    flex-wrap: wrap; /* Allow flex items to wrap onto multiple lines */
 }
 
+/* Styles for divs within the flex container of the services section */
 #services .flex > div {
-    width: 30%; /* Each service card takes up 30% of the container width */
-    margin-bottom: 32px; 
+    width: 30%; 
+    margin-bottom: 2rem; /* Add bottom margin */
 }
 
+/* Styles for font-awesome icons within service cards */
 #services .flex > div .fas {
-    color: #f69314;
+    color: #f69314; 
     font-size: 40px; 
     float: left; 
-    margin-top: 15px;
-    width: 20%; /* Width of the icon container */
-    text-align: center;
+    margin-top: 15px; 
+    width: 20%; 
+    text-align: center; /* Center-align icons */
 }
 
+/* Styles for the right side of the service cards */
 #services .flex > div .services-card-right {
-    float: right; /* Align service card content to the right */
-    width: 75%; /* Width of the right content area */
+    float: right; 
+    width: 75%; 
 }
 
+/* Styles for links within service cards */
 #services .flex > div a {
-    color: #f69314;
+    color: #f69314; 
     text-decoration: none; /* Remove underline from links */
+}
+
+/* Styles for links on hover within service cards */
+#services .flex > div a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* start: testimonials styles */
+/* Styles for the testimonials section */
+#testimonials {
+    margin-bottom: 8rem;
+}
+
+/* Styles for the heading in the testimonials section */
+#testimonials h2 {
+    text-align: center; /* Center-align the heading */
+}
+
+/* Styles for the slick slider within the testimonials section */
+#testimonials-slider .slick-slide {
+    text-align: center; /* Center-align each slide */
+}
+
+/* Styles for blockquotes in the testimonials slider */
+#testimonials-slider blockquote {
+    font-size: 1.5rem; 
+    font-style: italic; /* Italicize blockquotes */
+    margin: 1rem auto 3rem; 
+    max-width: 740px; 
+}
+
+/* Styles for the caption section of testimonials */
+#testimonials-slider .testimonials-caption {
+    width: 200px;
+    margin: 0 auto; /* Center the caption container */
+}
+
+/* Styles for images within the testimonials caption */
+#testimonials-slider .testimonials-caption img {
+    float: left; 
+    border-radius: 30px; /* Add rounded corners to the image */
+    width: 60px;
+}
+
+/* Styles for text within the testimonials caption */
+.testimonials-caption p {
+    position: relative; 
+    top: 13px;
+    font-size: 1.2rem; 
+}
+
+/* Styles for the arrow buttons in the testimonials slider */
+#testimonials-slider .slick-arrow {
+    text-decoration: none; /* Remove underline from arrow links */
+    position: absolute; 
+    font-size: 40px; 
+    color: #222; 
+    top: 50%; /* Align vertically to the middle */
+    margin-top: -35px; /* Adjust vertical position */
+    z-index: 1; /* Ensure arrows are on top of other content */
+}
+
+/* Positioning for the next arrow */
+#testimonials-slider .slick-next {
+    right: 0; 
+}
+
+
+/* start: contact us styles */
+/* Styles for the main contact section */
+#contact {
+    background: #f8f9fa; 
+    padding: 4rem 0 8rem; /* Add vertical padding */
+}
+
+/* Styles for the section heading */
+#contact h2 {
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 4rem; 
+}
+
+/* Styles for the form container */
+#form-container {
+    width: 58%; 
+    background: #fff; 
+    padding: 3rem;
+    box-sizing: border-box; /* Include padding in the element's total width */
+    height: 0%; 
+}
+
+/* Styles for the form heading */
+#form-container h3 {
+    color: #000;
+    font-family: "Playfair Display", serif; /* Use Playfair Display font for the heading */
+    margin-bottom: 2rem; 
+}
+
+/* Styles for labels in the form */
+#form-container label {
+    display: block; 
+    color: #000; 
+    margin-top: 1rem; 
+}
+
+/* Styles for input fields and textarea in the form */
+#form-container input,
+#form-container textarea {
+    display: block; /* Make input fields and textarea block elements */
+    border-radius: 20px; 
+    padding: 10px; 
+    border: 1px solid #ced4da; 
+    width: 100%; 
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    height: 43px; 
+    font-family: "Roboto", "Helvetica", "Sans-serif"; /* Use Roboto font */
+    font-size: 1rem; 
+    color: #495057;
+}
+
+/* Styles for the textarea specifically */
+#form-container textarea {
+    height: 170px; 
+    margin-bottom: 2rem; 
+    resize: none; /* Disable resizing of the textarea */
+}
+
+/* Styles for the address container */
+#address-container {
+    width: 38%; 
+    background: #fff; 
+    padding: 1.5rem; 
+    box-sizing: border-box; /* Include padding in the element's total width */
+    height: 0%; 
+}
+
+/* Styles for labels in the address container */
+#address-container label {
+    font-weight: 700; /* Make label text bold */
+    display: block; 
+    margin-top: 2rem;
+}
+
+/* Remove top margin for the first label in the address container */
+#address-container label:first-child {
+    margin-top: 0;
+}
+
+/* Styles for address elements */
+#address-container address {
+    margin-bottom: 1.5rem; 
+    font-style: normal; /* Set normal font style for addresses */
+}
+
+/* Styles for links in the address container */
+#address-container a {
+    text-decoration: none; /* Remove underline from links */
+    color: #f69314;
+}
+
+/* Styles for links on hover in the address container */
+#address-container a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+
+
+/* start: footer styles */
+/* Styles for the footer section */
+footer {
+    background: #333; 
+    padding: 8rem 0; /* Add vertical padding */
+}
+
+/* Styles for the footer's flex container */
+footer .flex {
+    padding-bottom: 6rem; 
+    border-bottom: 1px solid #777; 
+}
+
+/* Styles for footer headings */
+footer h5 {
+    color: #fff; 
+    margin-bottom: 1rem; 
+    font-weight: 300; /* Set font weight to light */
+}
+
+/* Additional margin for the 'Follow Us' heading */
+footer h5.follow-us {
+    margin-top: 1rem; 
+}
+
+/* Styles for the footer about section */
+footer .footer-about {
+    width: 47%; 
+}
+
+/* Styles for paragraphs in the footer about section */
+footer .footer-about p {
+    width: 65%; 
+}
+
+/* Styles for the footer quick links section */
+footer .footer-quick-links {
+    width: 16%; 
+}
+
+/* Styles for the unordered list in quick links */
+footer .footer-quick-links ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; 
+    margin: 0; 
+}
+
+/* Styles for list items in quick links */
+footer .footer-quick-links ul li {
+    margin: 10px 0; /* Add vertical margin */
+}
+
+/* Styles for links in quick links */
+footer .footer-quick-links ul li a {
+    color: #777;
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Styles for links on hover in quick links */
+footer .footer-quick-links ul li a:hover {
+    color: #fff; 
+}
+
+/* Styles for the footer subscribe section */
+footer .footer-subscribe {
+    width: 35%; 
+}
+
+/* Styles for the subscribe container */
+#subscribe-container {
+    position: relative; 
+}
+
+/* Styles for the subscribe input field */
+footer .footer-subscribe input {
+    border-radius: 30px; 
+    height: 43px; 
+    font-family: "Roboto", "Helvetica", "Sans-serif";
+    border: 1px solid #6c757d;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 10px; 
+    color: #fff;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    width: 80%; 
+}
+
+/* Styles for the right-rounded button in the footer */
+footer button.right-rounded {
+    border-top-right-radius: 30px; 
+    border-bottom-right-radius: 30px; 
+    background: #f69314; 
+    font-size: 16px; 
+    color: #000; 
+    padding: 10px 30px 9px; 
+    line-height: 1.5;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border: none; 
+    position: absolute; 
+    right: 0; 
+}
+
+/* Styles for the right-rounded button on hover */
+footer button.right-rounded:hover {
+    background: #fff; 
+}
+
+/* Styles for the unordered list in the subscribe section */
+footer .footer-subscribe ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+/* Styles for list items in the subscribe section */
+footer .footer-subscribe ul li {
+    display: inline-block; 
+    margin: 0 16px; /* Add horizontal margin */
+}
+
+/* Reset margin for the first item in the subscribe list */
+footer .footer-subscribe ul li:first-child {
+    margin-left: 0; 
+}
+
+/* Styles for links in the subscribe section */
+footer .footer-subscribe ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #777; 
+}
+
+/* Styles for links on hover in the subscribe section */
+footer .footer-subscribe ul li a:hover {
+    color: #fff;
+}
+
+/* Styles for small text in the footer */
+footer small {
+    margin-top: 3rem; 
+    font-size: 1rem; 
+    display: block; 
+    text-align: center; 
+}
+
+/* Styles for links in small text */
+footer small a {
+    color: #777; 
+    text-decoration: none; 
+}
+
+/* Styles for small text links on hover */
+footer small a:hover {
+    color: #fff; 
+}
+
+
+
+/* start: media queries */
+/* Media queries adjust styles based on the viewport width */
+/* Media query for devices with a maximum width of 991px (tablets and small desktops) */
+@media (max-width: 991px) {
+    /* Adjust the logo position */
+    #logo {
+        top: 1px; /* Move the logo down slightly */
+    }
+
+    /* Display the navigation toggle button (hamburger menu) */
+    #nav-toggle {
+        display: block; 
+    }
+
+    /* Style for the navigation menu */
+    nav ul {
+        position: fixed; 
+        background: #fff; 
+        right: -100%; /* Hide the menu off-screen to the right */
+        top: 0; 
+        margin: 0; 
+        padding: 2rem; 
+        height: 100%; 
+        width: 300px; 
+        box-sizing: border-box; /* Include padding and border in the total width */
+        box-shadow: 5px 0 10px 3px #999; /* Add a shadow effect on the right */
+    }
+
+    /* Close button for the flyout menu */
+    #close-flyout {
+        position: absolute; 
+        right: 2rem; 
+        top: 1.5rem;
+        font-size: 30px; 
+        color: #777; 
+        cursor: pointer; /* Change cursor to pointer on hover */
+        display: block; 
+        line-height: 1; 
+        margin: 0;
+    }
+
+    /* Styles for the list items in the navigation */
+    nav ul li {
+        display: block; /* Stack the items vertically */
+        margin: 20px 0; /* Add vertical spacing between items */
+    }
+
+    /* Add extra margin to the first list item */
+    nav ul li:first-child {
+        margin-top: 50px; /* Give more space above the first item */
+    }
+
+    /* Styles for links in the navigation */
+    nav ul li a {
+        font-size: 20px; 
+        color: #212529; 
+    }
+
+    /* Change the color of active and hovered links */
+    nav ul li a.active,
+    nav ul li a:hover {
+        color: #f69314; 
+    }
+}
+
+/* Media query for devices with a maximum width of 767px (small phones and larger screens) */
+@media (max-width: 767px) {
+    /* Adjust font sizes for headings */
+    h1 {
+        font-size: 2rem; /
+    }
+
+    h2 {
+        font-size: 1.75rem; 
+    }
+
+    h3 {
+        font-size: 1.2rem; 
+    }
+
+    /* Adjust font size for large paragraphs */
+    .large-paragraph {
+        font-size: 1rem; 
+    }
+
+    /* Adjust font size for general paragraphs */
+    p {
+        font-size: 0.8rem; 
+    }
+
+    /* Limit maximum width of containers */
+    .container {
+        max-width: 540px; 
+    }
+
+    /* Adjust hero text width */
+    #hero .hero-text {
+        width: 400px; 
+    }
+
+    /* Adjust agent card width */
+    #agents .card {
+        width: 49%; /* Make agent cards take up nearly half the width */
+    }
+
+    /* Hide image in the "the best" section on small screens */
+    #the-best .flex > img {
+        display: none; 
+    }
+
+    /* Make the "the best" section content full width */
+    #the-best .flex > div {
+        width: 100%; 
+    }
+
+    /* Adjust font size for testimonial text */
+    #testimonials-slider p {
+        font-size: 1.2rem; 
+    }
+
+    /* Adjust position and font size of the properties section indicator */
+    #properties .container:before {
+        top: 2px;
+        font-size: 0.85rem;
+    }
+
+    /* Adjust arrow size in the properties slider */
+    #properties-slider a.slick-arrow {
+        font-size: 0.85rem; 
+    }
+
+    /* Adjust button width in properties section */
+    #properties button.rounded {
+        width: 300px; 
+    }
+
+    /* Adjust width of service cards */
+    #services .flex > div {
+        width: 48%; 
+    }
+
+    /* Allow contact section to wrap flex items */
+    #contact .flex {
+        flex-wrap: wrap; /* Allow wrapping of items */
+    }
+
+    /* Adjust width and padding of the form container */
+    #form-container {
+        width: 100%; 
+        padding: 2rem;
+    }
+
+    /* Make address container full width */
+    #address-container {
+        width: 100%;
+        margin-top: 2rem; 
+    }
+
+    /* Adjust padding for footer */
+    footer {
+        padding: 6rem 0;
+    }
+
+    /* Allow footer flex items to wrap */
+    footer .flex {
+        flex-wrap: wrap; /* Allow items to wrap */
+    }
+
+    /* Make footer flex items full width */
+    footer .flex > div {
+        width: 100%; 
+        margin-top: 1rem;
+    }
+
+    /* Reset margin for the first footer item */
+    footer .flex > div:first-child {
+        margin-top: 0; 
+    }
+
+    /* Adjust paragraph style in footer about section */
+    footer .footer-about p {
+        font-size: 1rem; 
+        width: 100%; 
+    }
+
+    /* Adjust width of subscribe input field */
+    footer .footer-subscribe input {
+        width: 90%; 
+    }
+
+    /* Add margin above "Follow Us" section in footer */
+    footer h5.follow-us {
+        margin-top: 2rem; 
+    }
+}
+
+/* Media query for devices with a maximum width of 500px (small phones) */
+@media (max-width: 500px) {
+    /* Adjust hero text width for very small screens */
+    #hero .hero-text {
+        width: 330px; 
+    }
+
+    /* Adjust margin and padding for agents section */
+    #agents {
+        margin: 4rem 0 3rem; 
+        padding: 0 0 3rem;
+    }
+
+    /* Set agent card width to full */
+    #agents .card {
+        width: 100%; 
+    }
+
+    /* Adjust large paragraph width in agents section */
+    #agents p.large-paragraph {
+        width: 100%; 
+    }
+
+    /* Adjust layout of "how it works" section */
+    #how-it-works .flex {
+        display: block; /* Stack items vertically */
+    }
+
+    /* Make each item in "how it works" section full width */
+    #how-it-works .flex > div {
+        width: 100%; 
+        margin-top: 2rem; 
+    }
+
+    /* Adjust button width in properties section */
+    #properties button.rounded {
+        width: 250px; 
+    }
+
+    /* Adjust padding and margin in services section */
+    #services {
+        padding: 4rem 0 3rem;
+        margin: 4rem 0; 
+    }
+
+    /* Make service cards full width */
+    #services .flex > div {
+        width: 100%; 
+    }
+
+    /* Adjust margin for testimonials section */
+    #testimonials {
+        margin-bottom: 4rem; 
+    }
+
+    /* Adjust font size for testimonials text */
+    #testimonials-slider p {
+        font-size: 1rem; 
+    }
+
+    /* Hide arrows in the testimonials slider */
+    #testimonials-slider .slick-arrow {
+        display: none !important; /* Hide arrow elements */
+    }
+
+    /* Adjust padding for contact section */
+    #contact {
+        padding: 4rem 0; 
+    }
+
+    /* Adjust margin for contact heading */
+    #contact h2 {
+        margin-bottom: 2rem; 
+    }
+
+    /* Adjust padding for the form container in contact section */
+    #form-container {
+        padding: 1.5rem; 
+    }
+
+    /* Adjust padding for footer */
+    footer {
+        padding: 4rem 0; 
+    }
+}
+
+/* Media query for devices with a maximum width of 400px (very small phones) */
+@media (max-width: 400px) {
+    /* Adjust hero text for the smallest screens */
+    #hero .hero-text {
+        max-width: 275px; 
+        width: 100%;
+    }
+  
+    /* Adjust button width in properties section for small screens */
+    #properties button.rounded {
+        max-width: 250px; 
+        width: 100%; 
+    }
+  
+    /* Adjust width of navigation menu for small screens */
+    nav ul {
+        width: 200px; 
+    }
 }

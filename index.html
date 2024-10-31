@@ -1,492 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Let's Code This - Episode 3</title>
-    </head>
-    <body class="fullpage">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- Compatibility with Internet Explorer -->
+    <title>STATED.</title>
 
-        <!-- Main header section containing the logo and navigation -->
-        <header id="main-header" class="main-header">
-            <div class="header-wrap">
-                <div class="logo">
-                    <!-- Link to the homepage with a small logo using SVG for scalability -->
-                    <!-- Explanation of SVG (Scalable Vector Graphics): SVG stands for Scalable Vector Graphics. It is a type of image format that uses 
-                     shapes, lines, and text defined in XML to create graphics. SVG images can be scaled to any size without losing quality, 
-                     which makes them great for responsive web design. You can also style SVG images with CSS and make them interactive with JavaScript. 
-                     This allows for flexible and high-quality graphics on websites. -->
-                    <!-- This website used SVG to style some items so I kept that, but simplified the process -->
-                    <a href="https://codepen.io" class="logo-small">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M100 34.2c-.4-2.6-3.3-4-5.3-5.3-3.6-2.4-7.1-4.7-10.7-7.1-8.5-5.7-17.1-11.4-25.6-17.1-2-1.3-4-2.7-6-4-1.4-1-3.3-1-4.8 0-5.7 3.8-11.5 7.7-17.2 11.5L5.2 29C3 30.4.1 31.8 0 34.8c-.1 3.3 0 6.7 0 10v16c0 2.9-.6 6.3 2.1 8.1 6.4 4.4 12.9 8.6 19.4 12.9 8 5.3 16 10.7 24 16 2.2 1.5 4.4 3.1 7.1 1.3 2.3-1.5 4.5-3 6.8-4.5 8.9-5.9 17.8-11.9 26.7-17.8l9.9-6.6c.6-.4 1.3-.8 1.9-1.3 1.4-1 2-2.4 2-4.1V37.3c.1-1.1.2-2.1.1-3.1 0-.1 0 .2 0 0z"></path>
-                        </svg>
-                    </a>
-                </div>
+    <!-- Linking to the Slick Carousel CSS for the property slider -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
-                <div class="item-title">
-                    <div class="buttons-wrap">
+    <!-- Linking to external CSS stylesheet -->
+    <link href="style.css" rel="Stylesheet" />
 
-                        <a href="https://codepen.io/onclickmedia">OnClick</a>
-                        <a href="https://codepen.io/login?type=follow">
-                            <button class="follow-button" title="Follow" data-following="false">
-                                <!-- Follow button SVG icon -->
-                                <svg viewBox="0 0 132.4 132.4" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M75.4 123.1V75.4h47.7c5.1 0 9.2-4.1 9.3-9.3s-4.2-9.3-9.3-9.3H75.4V9.3c0-5.1-4.1-9.2-9.3-9.3-5.2-.1-9.3 4.2-9.3 9.3V57H9.1C4 57-.1 61.1-.2 66.3c-.1 5.2 4.2 9.3 9.3 9.3h47.7v47.7c0 5.1 4.1 9.2 9.3 9.3s9.3-4.4 9.3-9.5z"></path>
-                                </svg>
-                                <span>Follow</span>
-                            </button>                            
-                        </a>
-                    </div>
+    <!-- Linking to jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-                    <!-- Main title of the page -->
-                    <h1>Let's Code This - Episode 3</h1>
-                </div>
-            </div>
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/95dc93da07.js"></script> 
 
-            <!-- Right section containing action buttons -->
-            <div class="right-buttons">
-                <a href="https://codepen.io/login?type=love">
-                    <button title="Love" class="love-button">
-                        <!-- Love button SVG icon -->
-                        <svg viewBox="-2 0 105 92" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M85.24 2.67C72.29-3.08 55.75 2.67 50 14.9 44.25 2 27-3.8 14.76 2.67 1.1 9.14-5.37 25 5.42 44.38 13.33 58 27 68.11 50 86.81 73.73 68.11 87.39 58 94.58 44.38c10.79-18.7 4.32-35.24-9.34-41.71Z"></path>
-                        </svg>
-                        <span> </span>
-                    </button>
-                </a>
+    <!-- Slick Carousel JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
 
-                <a href="https://codepen.io/onclickmedia/pen/vqpVvX" title="View in Editor" class="view-source">View Source</a>
-                <a href="https://codepen.io/accounts/signup/user/free" class="signup-button">Sign Up</a>
-                <a href="https://codepen.io/login" class="login-button">Log In</a>
-            </div>
-        </header>        
+<body>
+    
+    <!-- Main container for the header and hero section -->
+    <div id="header-hero-container"> 
 
-        <!-- Main container for the header and hero section -->
-        <div id="header-hero-container">
-            <!-- Header section with transparent background, padding, and flexbox layout for alignment -->
-            <header style="background: transparent; padding: 1rem 0; box-shadow: none; display: flex; align-items: center;">
-                
-                <div style="margin-left: 200px;">
-                    <a id="logo" href="#">STATED.</a> <!-- Logo link, which takes the user back to the homepage -->
-                </div>
-                
+        <!-- Header section -->
+        <header>
+
+             <!-- Flex container to align logo and navigation -->
+            <div class="flex container">
+
+                <!-- Logo linking to the home page -->
+                <a id="logo" href="#">STATED.</a> 
+
                 <!-- Navigation section -->
-                <nav style="margin-left: auto;">
-                    <!-- Container for navigation buttons --> 
-                    <div id="nav-menu">
-                        <button class="nav-button"> <a href='#'>Home</a> </button>
-                        <button class="nav-button"> <a href="https://www.google.com" target="_blank">Properties</a> </button>
-                        <button class="nav-button"> <a href='#'>Agents</a> </button>
-                        <button class="nav-button"> <a href='#'>About</a> </button>
-                        <button class="nav-button"> <a href='#'>news</a> </button>
-                        <button class="nav-button" style="margin-right: 200px;"> <a href='#'>Contacts</a> </button>
-                    </div>
-                </nav>
-            </header>                       
-            
-             <!-- Separator for visual break between header and hero section -->
-            <div class="separator"></div>
-            
-            <!-- Hero section for showcasing content -->
-            <section id="hero">
-                <!-- Overlay for fading effect; may be used for styling purposes -->
-                <div class="fade"></div> 
+                <nav> 
+                    <!-- Button for mobile navigation toggle -->
+                    <button id="nav-toggle" class="hamburger-menu"> 
+                        <!-- strips of hamburger icon -->
+                        <span class="strip"></span> 
+                        <span class="strip"></span>
+                        <span class="strip"></span>
+                    </button>
+    
+                    <!-- Unordered list for navigation links -->
+                    <ul id="nav-menu"> 
+                        <li><a href="#" class="active">Home</a></li> <!-- Active link for home -->
+                        <li><a href="http://www.google.com" target="_blank">Properties</a></li> <!-- Link to properties, opens in new tab -->
+                        <li><a href="#">Agents</a></li> <!-- Link to agents section -->
+                        <li><a href="#">About</a></li> <!-- Link to about section -->
+                        <li><a href="#">News</a></li> <!-- Link to news section -->
+                        <li><a href="#">Contact</a></li> <!-- Link to contact section -->
 
-                <!-- Container for hero text -->
-                <div class="hero-text"> 
-                     <!-- Main heading for the hero section -->
-                    <h1>Buy and sell real estate properties</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.</p> <!-- Description text under the heading -->
+                        <!-- Close button for mobile navigation -->
+                        <li id="close-flyout"><span class="fas fa-times"></span></li> 
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- Hero section for impactful messaging -->
+        <section id="hero"> 
+
+            <!-- Overlay for fading effect on hero background -->
+            <div class="fade"></div> 
+
+            <!-- Container for hero text -->
+            <div class="hero-text"> 
+
+                <h1>Buy and sell real estate properties</h1>
+                <p>Lorem ipsum dolor sit amet consectectur adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.</p> <!-- Supporting text for the hero section -->
+            </div>
+        </section>
+    </div>
+    
+
+    <!-- How It Works Section -->
+    <section id="how-it-works"> 
+
+        <!-- Main container for the section -->
+        <div class="container">
+            <h2>How It Works</h2> 
+
+            <!-- Flex container for displaying the steps -->
+            <div class="flex"> 
+
+                <!-- Step 1 -->
+                <div> 
+                    <!-- Icon for finding a property -->
+                    <span class="fas fa-home"></span>
+
+                    <h4>Find a Property.</h4>
+                    <p>Lorem ipsum dolor sit amet consectectur adipisicing elit.</p>
                 </div>
-            </section>
+    
+                 <!-- Step 2 -->
+                <div>
+                    <!-- Icon for buying a property -->
+                    <span class="fas fa-dollar-sign"></span> 
+
+                    <h4>Buy a Property.</h4>
+                    <p>Lorem ipsum dolor sit amet consectectur adipisicing elit.</p>
+                </div>
+    
+                 <!-- Step 3 -->
+                <div>
+                    <!-- Icon for investing -->
+                    <span class="fas fa-chart-line"></span> 
+
+                    <h4>Investing.</h4>
+                    <p>Lorem ipsum dolor sit amet consectectur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Properties Section -->
+    <section id="properties"> 
+
+        <!-- Main container for the section -->
+        <div class="container"> 
+            <h2>Properties</h2>
+
+            <!-- Slider container for property listings -->
+            <div id="properties-slider" class="slick"> 
+
+                <!-- Property 1 -->
+                <div>
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/property_1.jpg" alt="Property 1" /> <!-- Property image -->
+
+                     <!-- Details container for the property -->
+                    <div class="property-details">
+                        <p class="price">$3,400,000</p> <!-- Property price -->
+                        <span class="beds">6 beds</span> <!-- Number of bedrooms -->
+                        <span class="baths">4 baths</span> <!-- Number of bathrooms -->
+                        <span class="sqft">4,250 sqft.</span> <!-- Square footage of the property -->
+
+                        <address>
+                            480 12th, Unit 14, San Francisco, CA
+                        </address>
+                    </div>
+                </div>
+    
+                <div>
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/property_2.jpg" alt="Property 2" />
+
+                     <!-- Details container for the property -->
+                    <div class="property-details">
+                        <p class="price">$3,400,000</p> 
+                        <span class="beds">6 beds</span>
+                        <span class="baths">4 baths</span> 
+                        <span class="sqft">4,250 sqft.</span> 
+
+                        <address> 
+                            480 12th, Unit 14, San Francisco, CA
+                        </address>
+                    </div>
+                </div>
+    
+                <div>
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/property_3.jpg" alt="Property 3" />
+
+                     <!-- Details container for the property -->
+                    <div class="property-details">
+                        <p class="price">$3,400,000</p> 
+                        <span class="beds">6 beds</span> 
+                        <span class="baths">4 baths</span> 
+                        <span class="sqft">4,250 sqft.</span> 
+
+                        <address>
+                            480 12th, Unit 14, San Francisco, CA
+                        </address>
+                    </div>
+                </div>
+    
+                <div> 
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/property_4.jpg" alt="Property 4" />
+
+                     <!-- Details container for the property -->
+                    <div class="property-details"> 
+                        <p class="price">$3,400,000</p> 
+                        <span class="beds">6 beds</span> 
+                        <span class="baths">4 baths</span> 
+                        <span class="sqft">4,250 sqft.</span> 
+
+                        <address>
+                            480 12th, Unit 14, San Francisco, CA
+                        </address>
+                    </div>
+                </div>
+    
+                <div> 
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/property_1.jpg" alt="Property 5" /> 
+
+                     <!-- Details container for the property -->
+                    <div class="property-details">
+                        <p class="price">$3,400,000</p> 
+                        <span class="beds">6 beds</span> 
+                        <span class="baths">4 baths</span>
+                        <span class="sqft">4,250 sqft.</span>
+
+                        <address>
+                            480 12th, Unit 14, San Francisco, CA
+                        </address>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Button to view all property listings -->
+            <button class="rounded">View All Property Listings</button> 
+        </div>
+    </section>    
+
+    <!-- Agents Section -->
+    <section id="agents"> 
+        <!-- Main container for the section -->
+        <div class="container"> 
+
+            <h2>Agents</h2> 
+            <p class="large-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima neque tempora reiciendis.</p>
+    
+            <!-- Flex container for displaying agent cards in a row -->
+            <div class="flex"> 
+                
+                <!-- Individual agent card -->
+                <div class="card"> 
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/person_1.jpg" alt="Realtor 1" /> <!-- Agent image -->
+                    <h3>Kaiara Spencer</h3> <!-- Agent's name -->
+                    <p>Real Estate Agent</p> <!-- Agent's position -->
+                </div>
+    
+                <div class="card">
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/person_2.jpg" alt="Realtor 1" />
+                    <h3>Dave Simpson</h3>
+                    <p>Real Estate Agent</p>
+                </div>
+    
+                <div class="card">
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/person_3.jpg" alt="Realtor 1" />
+                    <h3>Ben Thompson</h3>
+                    <p>Real Estate Agent</p>
+                </div>
+    
+                <div class="card">
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/person_4.jpg" alt="Realtor 1" />
+                    <h3>Kyla Stewart</h3>
+                    <p>Real Estate Agent</p>
+                </div>
+    
+                <div class="card">
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/person_5.jpg" alt="Realtor 1" />
+                    <h3>Rich Moffatt</h3>
+                    <p>Real Estate Agent</p>
+                </div>
+    
+                <div class="card">
+                    <img src="https://onclickwebdesign.com/wp-content/uploads/person_6.jpg" alt="Realtor 1" />
+
+                    <h3>Stuart Redman</h3>
+                    <p>Real Estate Agent</p> 
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Best Real Estate Company Section -->
+    <section id="the-best"> 
+        <!-- Flex container for layout -->
+        <div class="flex container"> 
+
+            <img src="https://onclickwebdesign.com/wp-content/uploads/property_1.jpg" alt="Property 1" />
+
+             <!-- Text content container -->
+            <div>
+
+                <h2>We Are the Best Real Estate Company</h2>
+                <p class="large-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
+                <p>Est qui eos quasi ratione nostrum excepturi id recusandae fugit omnis ullam pariatur itaque nisi voluptas impedit Quo suscipit omnis iste velit maxime.</p> <!-- Detailed paragraph describing the company and its services -->
+                
+                <!-- Unordered list for key points -->
+                <ul> 
+                    <li>Placeat maxime animi minus</li>
+                    <li>Placeat maxime animi minus</li>
+                    <li>Placeat maxime animi minus</li> 
+                    <li>Placeat maxime animi minus</li> 
+                    <li>Placeat maxime animi minus</li> 
+                </ul>
+
+                <!-- Button to navigate for more information -->
+                <button class="rounded">Learn More</button> 
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Services section -->
+    <section id="services"> 
+        <!-- Container for content -->
+        <div class="container"> 
+
+            <h2>Services</h2> 
+
+            <!-- Flex container for service cards -->
+            <div class="flex"> 
+
+                <!-- Card for Search Property -->
+                <div> 
+                    <!-- Icon for Search Property -->
+                    <div class="fas fa-home"></div> 
+
+                    <!-- Content for the card -->
+                    <div class="services-card-right"> 
+                        <h3>Search Property</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+    
+                <!-- Card for Buy Property -->
+                <div> 
+
+                    <!-- Icon for Buy Property -->
+                    <div class="fas fa-dollar-sign"></div> 
+
+                    <!-- Content for the card -->
+                    <div class="services-card-right"> 
+                        <h3>Buy Property</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+    
+                <!-- Card for Investing -->
+                <div> 
+
+                    <!-- Icon for Investing -->
+                    <div class="fas fa-chart-line"></div> 
+
+                    <!-- Content for the card -->
+                    <div class="services-card-right"> 
+                        <h3>Investing</h3> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+    
+                <!-- Card for List a Property -->
+                <div> 
+
+                    <!-- Icon for List a Property -->
+                    <div class="fas fa-building"></div> 
+
+                    <!-- Content for the card -->
+                    <div class="services-card-right"> 
+                        <h3>List a Property</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+    
+                <!-- Card for Property Locator -->
+                <div> 
+
+                    <!-- Icon for Property Locator -->
+                    <div class="fas fa-search"></div> 
+
+                    <!-- Content for the card -->
+                    <div class="services-card-right"> 
+                        <h3>Property Locator</h3> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+    
+                <!-- Card for Stated Apps -->
+                <div> 
+
+                    <!-- Icon for Stated Apps -->
+                    <div class="fas fa-mobile-alt"></div> 
+
+                    <!-- Content for the card -->
+                    <div class="services-card-right"> 
+                        <h3>Stated Apps</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
+                        <a href="#">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials section -->
+    <section id="testimonials"> 
+
+        <!-- Container for content -->
+        <div class="container"> 
+
+            <h2>What Our Clients Are Saying</h2> 
+
+            <!-- Slider for testimonials -->
+            <div id="testimonials-slider"> 
+
+                <!-- First testimonial -->
+                <div> 
+
+                    <!-- Blockquote for testimonial text -->
+                    <blockquote>
+                        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nostrum vitae explicabo dolore ratione. Quia iure quod ipsa blanditiis sint nulla a nam veritatis ex eos. Dicta molestiae dolorum laudantium."</p> <!-- Testimonial content -->
+                    </blockquote>
+
+                     <!-- Caption for the client giving the testimonial -->
+                    <div class="testimonials-caption">
+
+                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_7.jpg" alt="Client 7" />
+
+                        <p>Nick Andros</p>
+                    </div>
+                </div>
+    
+                <!-- Second testimonial -->
+                <div> 
+
+                    <!-- Blockquote for testimonial text -->
+                    <blockquote> 
+                        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nostrum vitae explicabo dolore ratione. Quia iure quod ipsa blanditiis sint nulla a nam veritatis ex eos. Dicta molestiae dolorum laudantium."</p> <!-- Testimonial content -->
+                    </blockquote>
+
+                    <!-- Caption for the client giving the testimonial -->
+                    <div class="testimonials-caption"> 
+
+                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_5.jpg" alt="Client 5" />
+
+                        <p>Larry Underwood</p>
+                    </div>
+                </div>
+    
+                <!-- Third testimonial -->
+                <div> 
+
+                    <!-- Blockquote for testimonial text -->
+                    <blockquote> 
+                        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia nostrum vitae explicabo dolore ratione. Quia iure quod ipsa blanditiis sint nulla a nam veritatis ex eos. Dicta molestiae dolorum laudantium."</p> <!-- Testimonial content -->
+                    </blockquote>
+
+                    <!-- Caption for the client giving the testimonial -->
+                    <div class="testimonials-caption"> 
+
+                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_8.jpg" alt="Client 8" />
+                        <p>Fran Goldsmith</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact section -->
+    <section id="contact"> 
+
+        <!-- Container for content -->
+        <div class="container"> 
+
+            <h2>Contact Us</h2>
+    
+            <!-- Flex container for form and address -->
+            <div class="flex"> 
+
+                <!-- Container for the contact form -->
+                <div id="form-container"> 
+
+                    <h3>Contact Form</h3> 
+
+                    <!-- Start of the contact form -->
+                    <!-- Form tag: 
+                    - used to create an interactive form for users to submit data to a server.
+                    - serves as a container for various input elements, such as text fields, checkboxes, radio buttons, and submit buttons -->
+                    <form> 
+                        <!-- Label Tag: 
+                        - used to define a label for a form input element
+                        - provides a clear association between the label and its corresponding input field
+                        - when users click on the label, it automatically focuses on the associated input field, 
+                          making it easier to fill out forms. -->
+
+                        <!-- Input Tag: 
+                        used in forms to allow users to enter data and interact with web applications -->
+
+                        <label for="name">Name</label> <!-- Label for name input -->
+                        <input type="text" id="name" /> <!-- Input field for name -->
+    
+                        <label for="email">Email</label> <!-- Label for email input -->
+                        <input type="text" id="email" /> <!-- Input field for email -->
+    
+                        <label for="subject">Subject</label> <!-- Label for subject input -->
+                        <input type="text" id="subject" /> <!-- Input field for subject -->
+    
+                        <label for="message">Message</label> <!-- Label for message textarea -->
+                        <textarea id="message">Write your message here..</textarea> <!-- Textarea for message -->
+    
+                        <button class="rounded">Send Message</button> <!-- Button to submit the form -->
+                    </form>
+                </div>
+    
+                <!-- Container for contact information -->
+                <div id="address-container"> 
+
+                    <label>Address</label> <!-- Label for address -->
+
+                    <!-- Address section -->
+                    <address> 
+                        20377 Evergreen Terrace Mountain View, California, USA 
+                    </address>
+    
+                    <label>Phone</label> <!-- Label for phone number -->
+                    <a href="#">232-232-2323</a> <!-- Phone number link -->
+    
+                    <label>Email Address</label> <!-- Label for email address -->
+                    <a href="#">ouremail@domain.com</a> <!-- Email address link -->
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer section -->
+    <footer> 
+
+        <!-- Flex container for footer content -->
+        <div class="flex container"> 
+            
+            <!-- About section -->
+            <div class="footer-about"> 
+
+                <h5>About Stated</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p> <!-- Description about the company -->
+            </div>
+
+            <!-- Quick links section -->
+            <div class="footer-quick-links"> 
+                
+                <h5>Quick Links</h5> 
+
+                <!-- Unordered list of links -->
+                <ul> 
+                    <li><a href="#">About Us</a></li> <!-- Link to About Us page -->
+                    <li><a href="#">Services</a></li> <!-- Link to Services page -->
+                    <li><a href="#">Testimonials</a></li> <!-- Link to Testimonials page -->
+                    <li><a href="#">Contact Us</a></li> <!-- Link to Contact Us page -->
+                </ul>
+            </div>
+
+            <!-- Subscription section -->
+            <div class="footer-subscribe"> 
+
+                <h5>Subscribe to our Newsletter</h5>
+
+                <!-- Container for subscription input -->
+                <div id="subscribe-container"> 
+
+                    <input type="text" placeholder="Enter Email" /> <!-- Input field for email subscription -->
+                    <button class="right-rounded">Send</button> <!-- Button to send subscription -->
+                </div>
+
+                <h5 class="follow-us">Follow Us</h5> 
+
+                <!-- Unordered list for social media icons -->
+                <ul> 
+                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li> <!-- Facebook icon -->
+                    <li><a href="#"><span class="fab fa-twitter"></span></a></li> <!-- Twitter icon -->
+                    <li><a href="#"><span class="fab fa-instagram"></span></a></li> <!-- Instagram icon -->
+                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li> <!-- LinkedIn icon -->
+                </ul>
+            </div>
         </div>
 
+        <!-- Small text for copyright notice -->
+        <!-- Small Tag:
+        a simple way to display less important text in a smaller size, enhancing the clarity and structure of content while maintaining semantic meaning.
+        It is typically used for content that is less important or requires less emphasis, such as legal disclaimers, fine print, or secondary information. -->
+        <small> 
+            <!-- The &copy; entity is used to represent the copyright symbol -->
+            Copyright &copy; 2019 All rights reserved | This template is made with <span class="fa fa-heart"></span> by <a href="https://colorlib.com">Colorlib</a> <!-- Copyright information -->
+        </small>
+    </footer>
 
 
-
-        
-        <section id="how-it-works"> <!-- Section for explaining the process of buying or selling properties -->
-            <div class="container"> <!-- Container to center and limit the width of the content -->
-                <h2>How It Works</h2> <!-- Main heading for the section -->
-                <div class="flex"> <!-- Flex container for layout -->
-                    <div>
-                        <span class="icon" aria-hidden="true"><img src="Screenshot 2024-10-28 110350.png"></span> <!-- Icon representing finding a property; includes an image -->
-                        <h4>Find a Property</h4> <!-- Subheading for the first step -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> <!-- Description of the step -->
-                    </div>
-                    <div>
-                        <span class="icon" aria-hidden="true"><img src="Screenshot 2024-10-28 110407.png"></span> <!-- Icon representing buying a property; includes an image -->
-                        <h4>Buy a Property</h4> <!-- Subheading for the second step -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> <!-- Description of the step -->
-                    </div>
-                    <div>
-                        <span class="icon" aria-hidden="true"><img src="Screenshot 2024-10-28 110415.png"></span> <!-- Icon representing investing; includes an image -->
-                        <h4>Investing</h4> <!-- Subheading for the third step -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> <!-- Description of the step -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="properties"> <!-- Section for displaying properties available for sale -->
-            <div class="container"> <!-- Container to center and limit the width of the content -->
-                <h2>Properties</h2> <!-- Main heading for the section -->
-                <div id="properties-slider" class="slick slick-initialized slick-slider"> <!-- Slick slider container for property images -->
-                    <a href="#" class="slick-arrow slick-prev" style="">previous</a> <!-- Previous arrow for slider navigation -->
-                    
-                    <div class="slick-list draggable"> <!-- List container for the slider items -->
-                        <div class="slick-track" style="opacity: 1; width: 3240px; transform: translate3d(-1080px, 0px, 0px);"> <!-- Track for the slider -->
-                            
-                            <!-- Each slick-slide represents an individual property -->
-                            <div class="slick-slide slick-cloned" style="width: 240px;" tabindex="-1" data-slick-index="-2" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_4.jpg" alt="Property 1"> <!-- Image of the property -->
-                                <div class="property-details"> <!-- Details about the property -->
-                                    <p class="price">$3,400,000</p> <!-- Price of the property -->
-                                    <span class="beds">6 beds</span> <!-- Number of bedrooms -->
-                                    <span class="baths">4 baths</span> <!-- Number of bathrooms -->
-                                    <span class="sqft">4,250 sqft.</span> <!-- Square footage of the property -->
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA <!-- Address of the property -->
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <!-- Repeated slick-slide elements for other properties -->
-                            <div class="slick-slide slick-cloned" style="width: 240px;" tabindex="-1" data-slick-index="-1" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_1.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide" style="width: 240px;" tabindex="-1" data-slick-index="0" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_1.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide" style="width: 240px;" tabindex="-1" data-slick-index="1" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_2.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide slick-current slick-active" style="width: 240px;" tabindex="0" data-slick-index="2" aria-hidden="false">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_3.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide slick-active" style="width: 240px;" tabindex="0" data-slick-index="3" aria-hidden="false">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_4.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide" style="width: 240px;" tabindex="-1" data-slick-index="4" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_1.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide slick-cloned" style="width: 240px;" tabindex="-1" data-slick-index="5" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_1.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide slick-cloned" style="width: 240px;" tabindex="-1" data-slick-index="6" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_2.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide slick-cloned" style="width: 240px;" tabindex="-1" data-slick-index="7" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_3.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide slick-cloned" style="width: 240px;" tabindex="-1" data-slick-index="8" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_4.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-        
-                            <div class="slick-slide slick-cloned" style="width: 240px;" tabindex="-1" data-slick-index="9" aria-hidden="true">
-                                <img src="https://onclickwebdesign.com/wp-content/uploads/property_1.jpg" alt="Property 1">
-                                <div class="property-details">
-                                    <p class="price">$3,400,000</p>
-                                    <span class="beds">6 beds</span>
-                                    <span class="baths">4 baths</span>
-                                    <span class="sqft">4,250 sqft.</span>
-                                    <address>
-                                        480 12th, Unit 14, San Francisco, CA
-                                    </address>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <a href="#" class="slick-arrow slick-next">next</a> <!-- Next arrow for slider navigation -->
-                </div>
-                
-                <button class="rounded">View All Property Listings</button> <!-- Button to view all property listings -->
-            </div>
-        </section>
-        
-        <!-- Main section for displaying agents -->
-        <section id="agents">
-            <!-- Container to center content and control width -->
-            <div class="container">
-
-                <!-- Heading for the agents section -->
-                <h2>Agents</h2> 
-
-                <p class="large-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima neque tempora reiciendis.</p>
-        
-                <!-- Flex container for laying out agent cards -->
-                <div class="flex">
-
-                    <!-- Individual agent card -->
-                    <div class="card">
-                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_1.jpg" alt="Realtor 1"> <!-- Agent image -->
-                        <h3>Kaiara Spencer</h3> <!-- Agent name -->
-                        <p>Real Estate Agent</p> <!-- Agent title -->
-                    </div>
-                    
-                    <div class="card">
-                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_2.jpg" alt="Realtor 1">
-                        <h3>Dave Simpson</h3> 
-                        <p>Real Estate Agent</p>
-                    </div>
-        
-                    <div class="card">
-                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_3.jpg" alt="Realtor 1">
-                        <h3>Ben Thompson</h3>
-                        <p>Real Estate Agent</p>
-                    </div>
-        
-                    <div class="card">
-                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_4.jpg" alt="Realtor 1">
-                        <h3>Kyla Stewart</h3>
-                        <p>Real Estate Agent</p>
-                    </div>
-        
-                    <div class="card">
-                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_5.jpg" alt="Realtor 1">
-                        <h3>Rich Moffatt</h3>
-                        <p>Real Estate Agent</p>
-                    </div>
-        
-                    <div class="card">
-                        <img src="https://onclickwebdesign.com/wp-content/uploads/person_6.jpg" alt="Realtor 1">
-                        <h3>Stuart Redman</h3>
-                        <p>Real Estate Agent</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section for showcasing the best real estate company -->
-        <section id="the-best"> 
-            <!-- Flex container for layout -->
-            <div class="flex container"> 
-                <img src="https://onclickwebdesign.com/wp-content/uploads/property_1.jpg" alt="Property 1"> <!-- Image representing a property -->
-                
-                <!-- Container for text content -->
-                <div>
-                    <!-- Main heading for the section -->
-                    <h2>We Are the Best Real Estate Company</h2>
-                    <p class="large-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    
-                    <p>Est qui eos quasi ratione nostrum excepturi id recusandae fugit omnis ullam pariatur itaque nisi voluptas impedit Quo suscipit omnis iste velit maxime.</p>
-                    
-                    <!-- List of features/advantages? -->
-                    <ul> 
-                        <li>Placeat maxime animi minus</li>
-                        <li>Placeat maxime animi minus</li>
-                        <li>Placeat maxime animi minus</li>
-                        <li>Placeat maxime animi minus</li>
-                        <li>Placeat maxime animi minus</li>
-                    </ul>
-                    
-                    <button class="rounded">Learn More</button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Services section starts -->
-        <section id="services">
-            <!-- Container for centering and spacing content -->
-            <div class="container">
-
-                <!-- Main heading for the services section -->
-                <h2>Services</h2> 
-
-                 <!-- Flex container for arranging service cards -->
-                <div class="flex">
-                    
-                    <!-- Service card 1 of 6-->
-                    <div>
-                        <div class="icon fas" aria-hidden="true"> <!-- Icon wrapper -->
-                            <img src="Screenshot 2024-10-28 110350.png">
-                        </div>
-
-                         <!-- Container for service title and description -->
-                        <div class="services-card-right">
-                            
-                            <!-- Service title -->
-                            <h3>Search Property</h3> 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                            <a href="#">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Service card 2 of 6-->
-                    <div>
-                        <div class="icon fas" aria-hidden="true">
-                            <img src="Screenshot 2024-10-28 110407.png">
-                        </div>
-
-                        <!-- Container for service title and description -->
-                        <div class="services-card-right"> 
-                            <h3>Buy Property</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                            <a href="#">Learn More</a>
-                        </div>
-                    </div>
-        
-                    <!-- Service card 3 of 6-->
-                    <div> 
-                        <div class="icon fas" aria-hidden="true"> 
-                            <img src="Screenshot 2024-10-28 110415.png"> 
-                        </div>
-
-                         <!-- Container for service title and description -->
-                        <div class="services-card-right">
-                            <h3>Investing</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                            <a href="#">Learn More</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Service card 4 of 6-->
-                    <div>
-                        <div class="icon fas" aria-hidden="true">
-                            <img src="Screenshot 2024-10-28 141759.png">
-                        </div>
-
-                        <!-- Container for service title and description -->
-                        <div class="services-card-right">
-                            <h3>List a Property</h3> 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                            <a href="#">Learn More</a>
-                        </div>
-                    </div>
-        
-                    <!-- Service card 5 of 6-->
-                    <div>
-                        <div class="icon fas" aria-hidden="true">
-                            <img src="Screenshot 2024-10-28 141810.png">
-                        </div>
-
-                         <!-- Container for service title and description -->
-                        <div class="services-card-right">
-                            <h3>Property Locator</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                            <a href="#">Learn More</a>
-                        </div>
-                    </div>
-        
-                    <!-- Service card 6 of 6-->
-                    <div>
-                        <div class="icon fas" aria-hidden="true">
-                            <img src="Screenshot 2024-10-28 141826.png">
-                        </div>
-
-                         <!-- Container for service title and description -->
-                        <div class="services-card-right">
-                            <h3>Stated Apps</h3> 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                            <a href="#">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-
-    </body>
+    <!-- Link to the JavaScript code to initialize the Slick slider -->
+    <script src="jstyles.js"></script>
+</body>
 </html>
